@@ -1,0 +1,284 @@
+/* ===== Watch Page CSS ===== */
+
+.watch-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 30px;
+    align-items: start;
+    gap: 24px;
+}
+
+/* VIDEO PLAYER */
+.player-col { min-width: 0; }
+
+.player-wrap {
+    background: #000;
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16/9;
+    box-shadow: var(--shadow);
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #000;
+}
+
+.no-video {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    font-size: 1rem;
+    background: var(--card-bg);
+    aspect-ratio: 16/9;
+    border-radius: var(--radius);
+}
+
+/* EP NOW INFO */
+.ep-now-info {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(155,77,202,0.2);
+    margin-bottom: 20px;
+}
+.ep-now-info h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--white);
+}
+.ep-label {
+    color: var(--muted);
+    margin-top: 4px;
+    font-size: 0.9rem;
+}
+
+/* ANIME DETAILS */
+.anime-details {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(155,77,202,0.2);
+    margin-bottom: 20px;
+}
+.detail-cover {
+    width: 110px;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+.details-right h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+}
+.genre-tag {
+    display: inline-block;
+    background: rgba(155,77,202,0.2);
+    color: var(--purple-light);
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+    border: 1px solid rgba(155,77,202,0.3);
+}
+.desc {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+.big-stars { color: var(--gold); font-size: 1.2rem; }
+
+/* REVIEWS */
+.review-section { margin-top: 10px; }
+.review-section h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    color: var(--white);
+}
+
+.success-msg {
+    background: rgba(34,197,94,0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34,197,94,0.3);
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+.error-msg {
+    background: rgba(239,68,68,0.15);
+    color: #f87171;
+    border: 1px solid rgba(239,68,68,0.3);
+    padding: 10px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 0.9rem;
+}
+
+.review-form {
+    background: var(--card-bg);
+    border: 1px solid rgba(155,77,202,0.2);
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+/* Star Picker */
+.star-picker {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-bottom: 14px;
+}
+.star-picker input[type="radio"] { display: none; }
+.star-picker label {
+    font-size: 2rem;
+    color: #4a3060;
+    cursor: pointer;
+    transition: color 0.1s, transform 0.1s;
+}
+.star-picker label:hover,
+.star-picker label:hover ~ label,
+.star-picker input:checked ~ label {
+    color: var(--gold);
+}
+.star-picker label:hover { transform: scale(1.2); }
+
+.review-form textarea {
+    width: 100%;
+    background: rgba(45,16,87,0.5);
+    border: 1px solid rgba(155,77,202,0.3);
+    border-radius: 8px;
+    color: var(--white);
+    padding: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    resize: vertical;
+    margin-bottom: 12px;
+    outline: none;
+}
+.review-form textarea:focus { border-color: var(--purple-accent); }
+
+/* Reviews List */
+.reviews-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+
+.review-item {
+    background: var(--card-bg);
+    border: 1px solid rgba(155,77,202,0.15);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+}
+.rev-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.rev-header strong { font-size: 0.9rem; }
+.rev-stars { color: var(--gold); font-size: 0.9rem; }
+.review-item p { font-size: 0.88rem; color: var(--muted); line-height: 1.5; margin-bottom: 4px; }
+.review-item small { font-size: 0.75rem; }
+
+/* EPISODE SIDEBAR */
+.episode-col {
+    position: sticky;
+    top: calc(var(--nav-h) + 24px);
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid rgba(155,77,202,0.2);
+    max-height: calc(100vh - var(--nav-h) - 48px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.ep-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(155,77,202,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.ep-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: var(--white);
+}
+.ep-total {
+    background: rgba(155,77,202,0.3);
+    color: var(--purple-light);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: 'Nunito', sans-serif;
+}
+
+.ep-list {
+    overflow-y: auto;
+    flex: 1;
+}
+.ep-list::-webkit-scrollbar { width: 4px; }
+.ep-list::-webkit-scrollbar-track { background: transparent; }
+.ep-list::-webkit-scrollbar-thumb { background: rgba(155,77,202,0.4); border-radius: 2px; }
+
+.ep-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    text-decoration: none;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(155,77,202,0.1);
+    transition: background 0.15s, color 0.15s;
+    font-size: 0.88rem;
+}
+.ep-item:hover {
+    background: rgba(155,77,202,0.1);
+    color: var(--white);
+}
+.ep-item.active {
+    background: rgba(155,77,202,0.2);
+    color: var(--white);
+    border-left: 3px solid var(--purple-accent);
+}
+.ep-num {
+    font-weight: 800;
+    font-size: 0.78rem;
+    color: var(--purple-light);
+    flex-shrink: 0;
+    min-width: 40px;
+}
+.ep-title { flex: 1; line-height: 1.3; }
+.now-playing { color: var(--gold); font-size: 0.75rem; flex-shrink: 0; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .watch-layout {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+    .episode-col {
+        position: static;
+        max-height: 350px;
+    }
+}
